@@ -1,174 +1,177 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Graduation Memories</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
-  <!-- Supabase SDK (loaded from CDN — no install needed) -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graduation Memories</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <!-- Supabase SDK (loaded from CDN — no install needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header id="main-header">
-    <div class="header-inner">
-      <div class="logo">
-        <span class="logo-icon">🎓</span>
-        <span class="logo-text">Graduation<em>Memories</em></span>
-      </div>
-      <nav class="nav-links">
-        <a href="#gallery">Gallery</a>
-        <a href="#upload-section" id="upload-nav-link">Upload</a>
-      </nav>
-      <div class="header-actions">
-        <button id="dark-mode-btn" aria-label="Toggle dark mode">
+    <!-- HEADER -->
+    <header id="main-header">
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Graduation<em>Memories</em></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#gallery">Gallery</a>
+                <a href="#upload-section" id="upload-nav-link">Upload</a>
+            </nav>
+            <div class="header-actions">
+                <button id="dark-mode-btn" aria-label="Toggle dark mode">
           <i data-lucide="sun" class="icon-sun"></i>
           <i data-lucide="moon" class="icon-moon"></i>
         </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg-overlay"></div>
-    <div class="confetti-wrapper" id="confetti-wrapper"></div>
-    <div class="hero-content">
-      <div class="hero-badge">Class of 2025</div>
-      <h1 class="hero-title">Graduation<br/><em>Memories</em></h1>
-      <p class="hero-subtitle">Cherish every cap toss, every smile, every milestone.<br/>Your journey captured forever.</p>
-      <div class="hero-cta">
-        <a href="#gallery" class="btn btn-primary">View Gallery</a>
-        <a href="#upload-section" class="btn btn-outline" id="hero-upload-btn">Upload Photo</a>
-      </div>
-    </div>
-    <div class="hero-scroll-hint"><i data-lucide="chevrons-down"></i></div>
-  </section>
-
-  <!-- GALLERY BANNER (share link / viewer notice) -->
-  <div id="gallery-banner"></div>
-
-  <!-- SEARCH & FILTER BAR -->
-  <section id="controls-bar">
-    <div class="controls-inner">
-      <div class="search-wrap">
-        <i data-lucide="search"></i>
-        <input type="text" id="search-input" placeholder="Search by caption…" />
-      </div>
-      <div class="filter-wrap">
-        <i data-lucide="calendar"></i>
-        <input type="date" id="filter-date" />
-        <button id="clear-filter-btn" title="Clear filter"><i data-lucide="x-circle"></i></button>
-      </div>
-      <div class="photo-count"><span id="photo-count-num">0</span> photos</div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="section-header">
-      <h2>Photo Gallery</h2>
-      <div class="section-divider"><span></span><i data-lucide="star"></i><span></span></div>
-    </div>
-    <div id="gallery-grid" class="gallery-grid"></div>
-    <p id="empty-msg" class="empty-msg">No photos yet. Be the first to upload a memory! 🎓</p>
-  </section>
-
-  <!-- UPLOAD SECTION -->
-  <section id="upload-section">
-    <div class="section-header">
-      <h2>Upload a Memory</h2>
-      <div class="section-divider"><span></span><i data-lucide="camera"></i><span></span></div>
-    </div>
-    <div class="upload-card">
-      <div id="drop-zone" class="drop-zone">
-        <i data-lucide="image-plus" class="drop-icon"></i>
-        <p>Drag & drop your photo here</p>
-        <span>or</span>
-        <label for="file-input" class="btn btn-outline btn-sm">Browse File</label>
-        <input type="file" id="file-input" accept="image/*" class="hidden-input" />
-      </div>
-      <div id="preview-wrap" class="preview-wrap hidden">
-        <img id="preview-img" src="" alt="Preview" />
-        <button id="change-photo-btn" class="btn btn-sm btn-outline">Change Photo</button>
-      </div>
-      <div class="upload-fields">
-        <div class="field-group">
-          <label for="caption-input">Caption</label>
-          <input type="text" id="caption-input" placeholder="Add a caption for this memory…" maxlength="120" />
+            </div>
         </div>
-        <div class="field-group">
-          <label for="date-input">Upload Date</label>
-          <input type="date" id="date-input" />
+    </header>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="confetti-wrapper" id="confetti-wrapper"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Class of 2025</div>
+            <h1 class="hero-title">Graduation<br/><em>Memories</em></h1>
+            <p class="hero-subtitle">Cherish every cap toss, every smile, every milestone.<br/>Your journey captured forever.</p>
+            <div class="hero-cta">
+                <a href="#gallery" class="btn btn-primary">View Gallery</a>
+                <a href="#upload-section" class="btn btn-outline" id="hero-upload-btn">Upload Photo</a>
+            </div>
         </div>
-        <div class="field-group">
-          <label for="name-input">Your Name (optional)</label>
-          <input type="text" id="name-input" placeholder="Your name…" maxlength="60" />
+        <div class="hero-scroll-hint"><i data-lucide="chevrons-down"></i></div>
+    </section>
+
+    <!-- GALLERY BANNER (share link / viewer notice) -->
+    <div id="gallery-banner"></div>
+
+    <!-- SEARCH & FILTER BAR -->
+    <section id="controls-bar">
+        <div class="controls-inner">
+            <div class="search-wrap">
+                <i data-lucide="search"></i>
+                <input type="text" id="search-input" placeholder="Search by caption…" />
+            </div>
+            <div class="filter-wrap">
+                <i data-lucide="calendar"></i>
+                <input type="date" id="filter-date" />
+                <button id="clear-filter-btn" title="Clear filter"><i data-lucide="x-circle"></i></button>
+            </div>
+            <div class="photo-count"><span id="photo-count-num">0</span> photos</div>
         </div>
-        <button class="btn btn-primary full-width" id="upload-btn">
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="section-header">
+            <h2>Photo Gallery</h2>
+            <div class="section-divider"><span></span><i data-lucide="star"></i><span></span></div>
+        </div>
+        <div id="gallery-grid" class="gallery-grid"></div>
+        <p id="empty-msg" class="empty-msg">No photos yet. Be the first to upload a memory! 🎓</p>
+    </section>
+
+    <!-- UPLOAD SECTION -->
+    <section id="upload-section">
+        <div class="section-header">
+            <h2>Upload Your Memory</h2>
+            <div class="section-divider"><span></span><i data-lucide="camera"></i><span></span></div>
+        </div>
+        <div class="upload-card">
+            <div id="drop-zone" class="drop-zone">
+                <i data-lucide="image-plus" class="drop-icon"></i>
+                <p>Drag & drop your photo here</p>
+                <span>or</span>
+                <label for="file-input" class="btn btn-outline btn-sm">Browse File</label>
+                <input type="file" id="file-input" accept="image/*" class="hidden-input" />
+            </div>
+            <div id="preview-wrap" class="preview-wrap hidden">
+                <img id="preview-img" src="" alt="Preview" />
+                <button id="change-photo-btn" class="btn btn-sm btn-outline">Change Photo</button>
+            </div>
+            <div class="upload-fields">
+                <div class="field-group">
+                    <label for="caption-input">Caption</label>
+                    <input type="text" id="caption-input" placeholder="Add a caption for this memory…" maxlength="120" />
+                </div>
+                <div class="field-group">
+                    <label for="date-input">Upload Date</label>
+                    <input type="date" id="date-input" />
+                </div>
+                <div class="field-group">
+                    <label for="name-input">Your Name (optional)</label>
+                    <input type="text" id="name-input" placeholder="Your name…" maxlength="60" />
+                </div>
+                <button class="btn btn-primary full-width" id="upload-btn">
           <i data-lucide="upload-cloud"></i> Upload Memory
         </button>
-        <p id="upload-status" class="upload-status hidden"></p>
-      </div>
+                <p id="upload-status" class="upload-status hidden"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDIT MODAL -->
+    <div id="edit-modal" class="modal hidden">
+        <div class="modal-box">
+            <button class="modal-close" id="edit-close-btn"><i data-lucide="x"></i></button>
+            <h2>Edit Memory</h2>
+            <img id="edit-preview" src="" alt="Edit Preview" class="edit-preview" />
+            <div class="field-group">
+                <label for="edit-caption">Caption</label>
+                <input type="text" id="edit-caption" maxlength="120" />
+            </div>
+            <div class="field-group">
+                <label for="edit-date">Date</label>
+                <input type="date" id="edit-date" />
+            </div>
+            <div class="field-group">
+                <label for="edit-name">Your Name</label>
+                <input type="text" id="edit-name" maxlength="60" />
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="edit-save-btn">Save Changes</button>
+                <button class="btn btn-outline" id="edit-cancel-btn">Cancel</button>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- EDIT MODAL -->
-  <div id="edit-modal" class="modal hidden">
-    <div class="modal-box">
-      <button class="modal-close" id="edit-close-btn"><i data-lucide="x"></i></button>
-      <h2>Edit Memory</h2>
-      <img id="edit-preview" src="" alt="Edit Preview" class="edit-preview" />
-      <div class="field-group">
-        <label for="edit-caption">Caption</label>
-        <input type="text" id="edit-caption" maxlength="120" />
-      </div>
-      <div class="field-group">
-        <label for="edit-date">Date</label>
-        <input type="date" id="edit-date" />
-      </div>
-      <div class="field-group">
-        <label for="edit-name">Your Name</label>
-        <input type="text" id="edit-name" maxlength="60" />
-      </div>
-      <div class="modal-actions">
-        <button class="btn btn-primary" id="edit-save-btn">Save Changes</button>
-        <button class="btn btn-outline" id="edit-cancel-btn">Cancel</button>
-      </div>
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox hidden">
+        <button class="lb-close" id="lb-close"><i data-lucide="x"></i></button>
+        <button class="lb-nav lb-prev" id="lb-prev"><i data-lucide="chevron-left"></i></button>
+        <button class="lb-nav lb-next" id="lb-next"><i data-lucide="chevron-right"></i></button>
+        <div class="lb-content">
+            <img id="lb-img" src="" alt="" />
+            <div class="lb-info">
+                <p id="lb-caption"></p>
+                <span id="lb-date"></span>
+                <span id="lb-name"></span>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox hidden">
-    <button class="lb-close" id="lb-close"><i data-lucide="x"></i></button>
-    <button class="lb-nav lb-prev" id="lb-prev"><i data-lucide="chevron-left"></i></button>
-    <button class="lb-nav lb-next" id="lb-next"><i data-lucide="chevron-right"></i></button>
-    <div class="lb-content">
-      <img id="lb-img" src="" alt="" />
-      <div class="lb-info">
-        <p id="lb-caption"></p>
-        <span id="lb-date"></span>
-        <span id="lb-name"></span>
-      </div>
-    </div>
-  </div>
+    <!-- OVERLAY -->
+    <div class="overlay hidden" id="overlay"></div>
 
-  <!-- OVERLAY -->
-  <div class="overlay hidden" id="overlay"></div>
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">🎓 Graduation<em>Memories</em></div>
+            <p class="footer-tagline">Every memory deserves a frame.</p>
+            <p class="footer-copy">&copy; 2025 Graduation Memories. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">🎓 Graduation<em>Memories</em></div>
-      <p class="footer-tagline">Every memory deserves a frame.</p>
-      <p class="footer-copy">&copy; 2025 Graduation Memories. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
