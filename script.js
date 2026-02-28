@@ -8,8 +8,13 @@
 // ══════════════════════════════════════════════════════════════
 //  PASTE YOUR SUPABASE VALUES HERE
 // ══════════════════════════════════════════════════════════════
+<<<<<<< HEAD
 const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_URL_HERE';
 const SUPABASE_KEY = 'PASTE_YOUR_SUPABASE_ANON_KEY_HERE';
+=======
+const SUPABASE_URL = 'https://pbmqrevpuqatlakjhplw.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBibXFyZXZwdXFhdGxha2pocGx3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIwOTA1NDAsImV4cCI6MjA4NzY2NjU0MH0.WvGP9NMFU7b6EKe27F4IAgTXS0bL0pT8HYGQFAJW6aA';
+>>>>>>> 4f182a4e62b02dd9780f8e5f941ce1ffd2619a19
 // ══════════════════════════════════════════════════════════════
 
 // ── UTILS (at top — needed before anything else runs) ──────────

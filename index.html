@@ -31,7 +31,81 @@
           <i data-lucide="sun" class="icon-sun"></i>
           <i data-lucide="moon" class="icon-moon"></i>
         </button>
+<<<<<<< HEAD
             </div>
+=======
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="confetti-wrapper" id="confetti-wrapper"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Class of 2026</div>
+      <h1 class="hero-title">Graduation<br/><em>Memories</em></h1>
+      <p class="hero-subtitle">Cherish every capture toss, every smile, every milestone.<br/>Your journey captured forever.</p>
+      <div class="hero-cta">
+        <a href="#gallery" class="btn btn-primary">View Gallery</a>
+        <a href="#upload-section" class="btn btn-outline" id="hero-upload-btn">Upload Photo</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint"><i data-lucide="chevrons-down"></i></div>
+  </section>
+
+  <!-- GALLERY BANNER (share link / viewer notice) -->
+  <div id="gallery-banner"></div>
+
+  <!-- SEARCH & FILTER BAR -->
+  <section id="controls-bar">
+    <div class="controls-inner">
+      <div class="search-wrap">
+        <i data-lucide="search"></i>
+        <input type="text" id="search-input" placeholder="Search by caption…" />
+      </div>
+      <div class="filter-wrap">
+        <i data-lucide="calendar"></i>
+        <input type="date" id="filter-date" />
+        <button id="clear-filter-btn" title="Clear filter"><i data-lucide="x-circle"></i></button>
+      </div>
+      <div class="photo-count"><span id="photo-count-num">0</span> photos</div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="section-header">
+      <h2>Photo Gallery</h2>
+      <div class="section-divider"><span></span><i data-lucide="star"></i><span></span></div>
+    </div>
+    <div id="gallery-grid" class="gallery-grid"></div>
+    <p id="empty-msg" class="empty-msg">No photos yet. Be the first to upload a memory! 🎓</p>
+  </section>
+
+  <!-- UPLOAD SECTION -->
+  <section id="upload-section">
+    <div class="section-header">
+      <h2>Upload a Memory</h2>
+      <div class="section-divider"><span></span><i data-lucide="camera"></i><span></span></div>
+    </div>
+    <div class="upload-card">
+      <div id="drop-zone" class="drop-zone">
+        <i data-lucide="image-plus" class="drop-icon"></i>
+        <p>Drag & drop your photo here</p>
+        <span>or</span>
+        <label for="file-input" class="btn btn-outline btn-sm">Browse File</label>
+        <input type="file" id="file-input" accept="image/*" class="hidden-input" />
+      </div>
+      <div id="preview-wrap" class="preview-wrap hidden">
+        <img id="preview-img" src="" alt="Preview" />
+        <button id="change-photo-btn" class="btn btn-sm btn-outline">Change Photo</button>
+      </div>
+      <div class="upload-fields">
+        <div class="field-group">
+          <label for="caption-input">Caption</label>
+          <input type="text" id="caption-input" placeholder="Add a caption for this memory…" maxlength="120" />
+>>>>>>> 4f182a4e62b02dd9780f8e5f941ce1ffd2619a19
         </div>
     </header>
 
@@ -171,7 +245,20 @@
         </div>
     </footer>
 
+<<<<<<< HEAD
     <script src="script.js"></script>
+=======
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">🎓 Graduation<em>Memories</em></div>
+      <p class="footer-tagline">Every memory deserves a frame.</p>
+      <p class="footer-copy">&copy; 2026 Graduation Memories. Powered by Bramuel Godwill.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+>>>>>>> 4f182a4e62b02dd9780f8e5f941ce1ffd2619a19
 </body>
 
 </html>
